@@ -1,29 +1,28 @@
 format = """
-[dir →](bold red) $directory 
-[git →](bold purple) $git_branch$git_state$git_status
-[env →](bold yellow) $python$nodejs
+[dir →](bold bright-purple) $directory  [env →](bold bright-yellow) $python$nodejs [git →](bold bright-green) $git_branch$git_state$git_status 
 $linebreak
 $character"""
 
 [directory]
 style = "blue"
-truncation_length = 10
+truncation_length = 2
+format = '[\[$path\]](italic bold bright-purple)[$read_only]($read_only_style)'
 
 [nodejs]
 symbol = ' '
-format = '[$symbol 🤖 $version](bold green) '
+format = '[$symbol 🤖 $version](bold bright-yellow) '
 
 [character]
-success_symbol = "[❯](purple)"
+success_symbol = "[❯](blue)"
 error_symbol = "[❯](red)"
 vimcmd_symbol = "[❮](green)"
 
 [git_branch]
-format = "[$branch]($style)"
+format = '[\[$branch](italic bold bright-green)'
 style = "bright-black"
 
 [git_status]
-format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
+format = '[[(*$conflicted$untracked$modified$staged$renamed$deleted)\]](italic bold bright-green) ($ahead_behind$stashed)](italic bold bright-green)'
 style = "cyan"
 conflicted = "​"
 untracked = "​"
@@ -34,7 +33,7 @@ deleted = "​"
 stashed = "≡"
 
 [git_state]
-format = '\([$state( $progress_current/$progress_total)]($style)\) '
+format = '\([$state( $progress_current/$progress_total)](italic bold bright-green)\) '
 style = "bright-black"
 
 [cmd_duration]
