@@ -10,7 +10,7 @@ format = '[\[$path\]](italic bold bright-purple)[$read_only]($read_only_style)'
 
 [nodejs]
 symbol = ' '
-format = '[$symbol 🤖 $version](bold bright-yellow) '
+format = '[\[$symbol 🤖 $version\]](bold bright-yellow) '
 
 [character]
 success_symbol = "[❯](blue)"
