@@ -1,6 +1,6 @@
 format = """
 $username\
-$hostname\
+hostname\
 $directory\
 $git_branch\
 $git_state\
@@ -12,7 +12,7 @@ $nodejs\
 $character"""
 
 [directory]
-style = "blue"
+style = "#ffffff"
 
 [nodejs]
 symbol = ' '
@@ -25,11 +25,11 @@ vimcmd_symbol = "[❮](green)"
 
 [git_branch]
 format = "[$branch]($style)"
-style = "bright-black"
+style = "#0096FF"
 
 [git_status]
 format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
-style = "cyan"
+style = "#B2AC88"
 conflicted = "​"
 untracked = "​"
 modified = "​"
