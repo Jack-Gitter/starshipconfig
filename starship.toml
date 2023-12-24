@@ -6,13 +6,19 @@ format = """
 # $linebreak\
 # $character"""
 
+add_newline = true
 
- add_newline = true
+
+palette = 'foo'
+
+[palettes.foo]
+light-blue = '#92f2fc'
+
 
 [directory]
 style = "blue"
 truncation_length = 2
-format = '[\[$path\]](italic bold bright-purple)[$read_only]($read_only_style)'
+format = '[\[$path\]](italic bold light-blue)[$read_only]($read_only_style)'
 
 [nodejs]
 format = '[\[🤖 $version\]](bold bright-yellow) '
