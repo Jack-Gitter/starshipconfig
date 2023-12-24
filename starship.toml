@@ -1,7 +1,12 @@
 format = """
-[dir →](bold bright-purple) $directory  [env →](bold bright-yellow) $python$nodejs [git →](bold bright-green) $git_branch$git_state$git_status 
-$linebreak
-$character"""
+ $directory $python$nodejs $git_branch$git_state$git_status 
+ $linebreak
+ $character"""
+# [dir →](bold bright-purple) $directory  [env →](bold bright-yellow) $python$nodejs [git →](bold bright-green) $git_branch$git_state$git_status 
+# $linebreak\
+# $character"""
+
+ add_newline = true
 
 [directory]
 style = "blue"
@@ -9,20 +14,19 @@ truncation_length = 2
 format = '[\[$path\]](italic bold bright-purple)[$read_only]($read_only_style)'
 
 [nodejs]
-symbol = ' '
-format = '[\[$symbol 🤖 $version\]](bold bright-yellow) '
+format = '[\[🤖 $version\]](bold bright-yellow) '
 
 [character]
-success_symbol = "[❯](blue)"
-error_symbol = "[❯](red)"
-vimcmd_symbol = "[❮](green)"
+success_symbol = "[❯](bold blue)"
+error_symbol = "[✗](bold red)"
 
 [git_branch]
-format = '[\[$branch](italic bold bright-green)'
+symbol = '🌱'
+format = '[\[$symbol $branch](italic bold bright-green)'
 style = "bright-black"
 
 [git_status]
-format = '[[(*$conflicted$untracked$modified$staged$renamed$deleted)\]](italic bold bright-green) ($ahead_behind$stashed)](italic bold bright-green)'
+format = '[[(*$conflicted$untracked$modified$staged$renamed$deleted)](italic bold bright-green) ($ahead_behind$stashed)\]](italic bold bright-green)'
 style = "cyan"
 conflicted = "​"
 untracked = "​"
@@ -41,6 +45,7 @@ format = "[$duration]($style) "
 style = "yellow"
 
 [python]
-format = "[$virtualenv]($style)"
+symbol = '🐍 '
+format = '[\[${symbol}${pyenv_prefix}(${version})\]]($bold bright-green)'
 style = "bright-black"
 
