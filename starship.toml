@@ -8,23 +8,18 @@ format = """
 
 add_newline = true
 
-
 palette = 'foo'
 
 [palettes.foo]
 light-blue = '#92f2fc'
-
 
 [directory]
 style = "blue"
 truncation_length = 2
 format = '[\[$path\]](italic bold light-blue)[$read_only]($read_only_style)'
 
-[nodejs]
-format = '[\[🤖 $version\]](bold bright-yellow) '
-
 [character]
-success_symbol = "[❯](bold blue)"
+success_symbol = "[❯](bold light-blue)"
 error_symbol = "[✗](bold red)"
 
 [git_branch]
@@ -47,12 +42,4 @@ stashed = "≡"
 format = '\([$state( $progress_current/$progress_total)](italic bold bright-green)\) '
 style = "bright-black"
 
-[cmd_duration]
-format = "[$duration]($style) "
-style = "yellow"
-
-[python]
-symbol = '🐍 '
-format = '[\[${symbol}${pyenv_prefix}(${version})\]]($bold bright-green)'
-style = "bright-black"
 
