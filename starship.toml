@@ -1,26 +1,13 @@
-format = """
- $directory $python$nodejs $git_branch$git_state$git_status 
- $linebreak
- $character"""
-# [dir →](bold bright-purple) $directory  [env →](bold bright-yellow) $python$nodejs [git →](bold bright-green) $git_branch$git_state$git_status 
-# $linebreak\
-# $character"""
+format = ''' $directory on $git_branch$git_state$git_status 
+             $newline
+             $character '''
 
 add_newline = true
 
-palette = 'foo'
+palette = 'colors'
 
-[palettes.foo]
+[palettes.colors]
 light-blue = '#92f2fc'
-
-[directory]
-style = "blue"
-truncation_length = 2
-format = '[\[$path\]](italic bold light-blue)[$read_only]($read_only_style)'
-
-[character]
-success_symbol = "[❯](bold light-blue)"
-error_symbol = "[✗](bold red)"
 
 [git_branch]
 symbol = '🌱'
@@ -28,7 +15,7 @@ format = '[\[$symbol $branch](italic bold bright-green)'
 style = "bright-black"
 
 [git_status]
-format = '[[(*$conflicted$untracked$modified$staged$renamed$deleted)](italic bold bright-green) ($ahead_behind$stashed)\]](italic bold bright-green)'
+format = '([\[$all_status$ahead_behind\]]($style) )'
 style = "cyan"
 conflicted = "​"
 untracked = "​"
@@ -39,7 +26,17 @@ deleted = "​"
 stashed = "≡"
 
 [git_state]
-format = '\([$state( $progress_current/$progress_total)](italic bold bright-green)\) '
-style = "bright-black"
+format = '\([$state($progress_current/$progress_total)]($style)\) '
+style = "italic bold bright-green"
+
+[directory]
+style = "blue"
+truncation_length = 2
+format = '[\[$path\]](italic bold light-blue)'
+
+[character]
+success_symbol = "[❯](bold light-blue)"
+error_symbol = "[✗](bold red)"
+
 
 
